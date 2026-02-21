@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEPFY Hero Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(1.05);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Base animation classes */
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+        }
+
+        /* Staggered delays */
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+        /* Typography utilities */
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+        
+        /* Custom font smoothing */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white h-20 flex items-center px-6 md:px-10 lg:px-12 animate-fade-in delay-0">
+        <div class="w-full max-w-[1920px] mx-auto relative flex items-center justify-between">
+            
+            <!-- Left Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 lg:gap-10">
+                <a href="#" class="text-[15px] font-medium text-gray-900 hover:text-[#475569] transition-colors tracking-wide">Funcionalidades</a>
+                <a href="#" class="text-[15px] font-medium text-gray-900 hover:text-gray-600 transition-colors tracking-wide">Preços</a>
+                <a href="#" class="text-[15px] font-medium text-gray-900 hover:text-gray-600 transition-colors tracking-wide">Exemplos</a>
+                <a href="#" class="text-[15px] font-medium text-gray-900 hover:text-gray-600 transition-colors tracking-wide">Entrar</a>
+            </nav>
+
+            <!-- Mobile Menu Button (Visible only on small screens) -->
+            <button class="md:hidden text-gray-900 p-2 -ml-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Centered Logo -->
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <a href="#" class="block group">
+                    <!-- Using text to simulate the logo as requested, styled to match -->
+                    <span class="text-3xl font-[900] tracking-tighter text-black uppercase group-hover:opacity-80 transition-opacity" style="font-family: 'Arial Black', 'Inter', sans-serif;">NEPFY</span>
+                </a>
+            </div>
+
+            <!-- Empty right side to balance the flex layout -->
+            <div class="hidden md:block w-px"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative w-full h-screen min-h-[600px] overflow-hidden bg-gray-900">
+        
+        <!-- Background Image Container -->
+        <div class="absolute inset-0 w-full h-full animate-scale-in">
+            <!-- Placeholder for the industrial jet engine/misty mountain background -->
+            <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/d377c5a4-dcb1-4ae4-9f5b-cf68b3897b80/hero-3-img-0-1771646778296.png" 
+                 alt="Jet engine turbine on test stand with misty mountains background" 
+                 class="w-full h-full object-cover opacity-90">
+            
+            <!-- Subtle gradient overlay to ensure text readability -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/40"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-6">
+            <div class="w-full max-w-7xl mx-auto flex flex-col items-center pt-20">
+                
+                <!-- Main Headline -->
+                <h1 class="text-white text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-normal text-center leading-[1.05] tracking-tight text-balance max-w-5xl animate-fade-in-up delay-200 drop-shadow-lg">
+                    Propostas interativas que<br class="hidden md:block" /> vendem muito mais que PDFs
+                </h1>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
